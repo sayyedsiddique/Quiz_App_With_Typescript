@@ -18,6 +18,7 @@ const QuestionCard: React.FC<Props> = ({
   questionNr,
   totalQuestions,
 }) => {
+  console.log("userAnswer ", userAnswer)
   return (
     <div>
       <p className="number">
@@ -28,7 +29,7 @@ const QuestionCard: React.FC<Props> = ({
         {answers.map((answer) => {
           return (
             <div key={answer}>
-              <button disabled={userAnswer} onClick={callback}>
+              <button disabled={userAnswer} value={answer} onClick={callback}>
                 <span dangerouslySetInnerHTML={{ __html: answer }} />
               </button>
             </div>
